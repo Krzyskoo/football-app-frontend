@@ -1,7 +1,12 @@
 <div class="p-4">
     <h2 class="text-xl font-bold">Witaj, {{ user?.email }}</h2>
-    <p>Twoje saldo: {{ user?.balance }} USD</p>
-  
+    <p>Twoje saldo: {{ user?.balance }} USD <button (click)="goToDeposit()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+      Make Deposit
+    </button> </p>
+    <button (click)="goToEvents()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
+      Place a bet
+    </button>
+    
     <div class="mt-4">
       <h3 class="font-semibold">Aktywne zakłady:</h3>
       <ul>

@@ -1,5 +1,16 @@
+<div class="mb-4">
+  <label>
+    Filtruj po dacie:
+    <input type="date" [(ngModel)]="filterDate" name="filterDate" />
+  </label>
+  <label>
+    Filtruj po lidze:
+    <input type="text" [(ngModel)]="filterLeague" name="filterLeague" placeholder="np. Premier League" />
+  </label>
+</div>
+
 <ul>
-    <li *ngFor="let event of events">
+    <li *ngFor="let event of filteredEvents()">
       <strong>{{ event.homeTeam }} vs {{ event.awayTeam }}</strong><br />
       Rozpoczęcie: {{ event.startTime | date:'short' }}<br />
       Status: {{ event.status }}<br />
@@ -9,7 +20,7 @@
       <button>Obstaw ({{ event.awayTeamOdds }})</button>
       <hr />
     </li>
-  </ul>
+</ul>
   
 
 <p *ngIf="events.length === 0">Brak dostępnych wydarzeń.</p>

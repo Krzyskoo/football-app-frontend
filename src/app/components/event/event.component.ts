@@ -12,13 +12,29 @@ import { EventService } from '../../services/event.service';
 })
 export class EventComponent implements OnInit {
   events: Event[] = [];
+  filterDate: string = '';
+  filterLeague: string = '';
   constructor(private eventService: EventService){}
 
   ngOnInit(): void {
-    this.eventService.getEvents('soccer_poland_ekstraklasa').subscribe({
+    this.eventService.getEvents().subscribe({
       next: (data) => (this.events = data),
       error: (err) => console.error('Błąd przy pobieraniu eventów', err),
     });
   }
 
+  filteredEvents(): Event[] {
+    return this.events.filter(event => {
+      const matchesDate = this.filterDate
+        ? new Date(event.startTime).toISOString().slice(0, 10) === this.filterDate
+        : true;
+
+      const matchesLeague = this.filterLeague
+        ? event.sportTitle?.toLowerCase().includes(this.filterLeague.toLowerCase())
+        : true;
+
+      return matchesDate && matchesLeague;
+  });
+
+}
 }

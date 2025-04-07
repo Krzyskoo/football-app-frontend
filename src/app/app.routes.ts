@@ -15,4 +15,6 @@ export const routes: Routes = [
     { path: 'payment-cancel', component: PaymentCancelComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path:'event', component: EventComponent},
+    { path: 'deposit', component: PaymentComponent },
+
   ];

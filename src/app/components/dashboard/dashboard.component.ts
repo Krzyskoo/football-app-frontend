@@ -5,6 +5,8 @@ import { UserService } from '../../services/user.service';
 import { BetService } from '../../services/bet.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PaymentService } from '../../services/payment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +20,7 @@ export class DashboardComponent implements OnInit {
   bets: Bet[] = [];
   selectedBet: Bet | null = null;
 
-  constructor(private userService: UserService, private betService: BetService) {}
+  constructor(private userService: UserService, private betService: BetService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.getUserProfile().subscribe(user => (this.user = user));
@@ -28,5 +30,12 @@ export class DashboardComponent implements OnInit {
   selectBet(bet: Bet): void {
     this.selectedBet = bet;
   }
+  goToDeposit(): void {
+    this.router.navigate(['/deposit']);
+  }
+  goToEvents(): void{
+    this.router.navigate(['/event'])
+  }
+
 
 }

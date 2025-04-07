@@ -7,11 +7,11 @@ import { Event } from '../models/Event';
   providedIn: 'root'
 })
 export class EventService {
-  private baseUrl = 'http://localhost:8080/bet';
+  private baseUrl = 'http://localhost:8080/bet/events';
 
   constructor(private http:HttpClient) { }
 
-  getEvents(sportKey: string): Observable<Event[]> {
-    return this.http.get<Event[]>(`${this.baseUrl}/${sportKey}`);
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(this.baseUrl);
   }
 }
