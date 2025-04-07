@@ -1,0 +1,8 @@
+<h2>Podaj kwotę płatności</h2>
+
+<div class="payment-form">
+    <input [(ngModel)]="amount" placeholder="Kwota" type="number" />
+    <input [(ngModel)]="currency" placeholder="Waluta" />
+    <button (click)="createPayment()">Zapłać</button>
+</div>
+  

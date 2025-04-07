@@ -1,0 +1,6 @@
+<div class="login-form">
+  <input [(ngModel)]="username" placeholder="Username" type="username" />
+  <input [(ngModel)]="password" placeholder="Hasło" type="password" />
+  <button (click)="login()">Zaloguj się</button>
+  <div class="error" *ngIf="error">{{ error }}</div>
+</div>

@@ -1,0 +1,15 @@
+<ul>
+    <li *ngFor="let event of events">
+      <strong>{{ event.homeTeam }} vs {{ event.awayTeam }}</strong><br />
+      Rozpoczęcie: {{ event.startTime | date:'short' }}<br />
+      Status: {{ event.status }}<br />
+  
+      <button>Obstaw ({{ event.homeTeamOdds }})</button>
+      <button>Remis ({{ event.drawOdds }})</button>
+      <button>Obstaw ({{ event.awayTeamOdds }})</button>
+      <hr />
+    </li>
+  </ul>
+  
+
+<p *ngIf="events.length === 0">Brak dostępnych wydarzeń.</p>

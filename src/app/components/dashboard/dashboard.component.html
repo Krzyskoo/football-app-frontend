@@ -1,0 +1,23 @@
+<div class="p-4">
+    <h2 class="text-xl font-bold">Witaj, {{ user?.email }}</h2>
+    <p>Twoje saldo: {{ user?.balance }} USD</p>
+  
+    <div class="mt-4">
+      <h3 class="font-semibold">Aktywne zakłady:</h3>
+      <ul>
+        <li *ngFor="let bet of bets" (click)="selectBet(bet)" class="cursor-pointer hover:underline">
+          Zakład #{{ bet.betId }} - {{ bet.status }} - Stawka: {{ bet.stake }}
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="selectedBet" class="mt-6 border-t pt-4">
+        <h4 *ngIf="selectedBet" class="font-bold">
+            Szczegóły zakładu #{{ selectedBet?.betId }}
+          </h4>      <ul>
+        <li *ngFor="let sel of selectedBet.selections">
+          {{ sel.event.homeTeam }} vs {{ sel.event.awayTeam }} - Typ: {{ sel.predictedResult }} - Kurs: {{ sel.lockedOdds }}
+        </li>
+      </ul>
+    </div>
+  </div>

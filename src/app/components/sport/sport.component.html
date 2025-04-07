@@ -1,0 +1,24 @@
+<h2>Lista sportów</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Group</th>
+      <th>Active</th>
+      <th>Outrights</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sport of sports">
+      <td>{{ sport.key }}</td>
+      <td>{{ sport.title }}</td>
+      <td>{{ sport.description }}</td>
+      <td>{{ sport.group }}</td>
+      <td>{{ sport.active }}</td>
+      <td>{{ sport.has_outrights }}</td>
+    </tr>
+  </tbody>
+</table>
