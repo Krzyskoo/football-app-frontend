@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<header class="app-header">
+  <app-header></app-header>
+</header>
+
+<main class="layout-grid">
+  <aside class="left-sidebar">
+    <app-sidebar-left></app-sidebar-left>
+  </aside>
+
+  <section class="main-section">
+    <router-outlet></router-outlet>
+  </section>
+
+  <aside class="right-sidebar">
+    <app-sidebar-bet></app-sidebar-bet>
+  </aside>
+</main>
+
+<footer class="app-footer">
+  <p>&copy; 2025 FootballApp - Wszelkie prawa zastrzeżone</p>
+</footer>
+
+  

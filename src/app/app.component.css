@@ -1,0 +1,41 @@
+/* 🔝 Zapewnij, że cała strona wypełnia ekran */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app-footer {
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+/* 🔲 Główna siatka */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  height: calc(100vh - 120px); /* odejmujemy header i footer */
+}
+
+/* 📌 Lewy sidebar */
+.left-sidebar {
+  background-color: #f4f4f4;
+  overflow-y: auto;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+
+/* 🎯 Środkowa sekcja z eventami */
+.main-section {
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+/* 🧾 Prawy sidebar */
+.right-sidebar {
+  background-color: #fff;
+  overflow-y: auto;
+  padding: 1rem;
+  border-left: 1px solid #ddd;
+}

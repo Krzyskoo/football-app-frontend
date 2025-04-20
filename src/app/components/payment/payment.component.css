@@ -1,0 +1,71 @@
+.payment-container {
+    background-color: #F8F9FA; /* seasalt */
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(33, 37, 41, 0.08); /* soft shadow using #212529 */
+    max-width: 420px;
+    margin: 3rem auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #343A40; /* onyx */
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #212529; /* eerie black */
+    text-align: center;
+  }
+  
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .payment-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #CED4DA; /* french gray */
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    color: #495057; /* outer space */
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .payment-form input::placeholder {
+    color: #ADB5BD; /* light gray text */
+  }
+  
+  .payment-form input:focus {
+    border-color: #6C757D; /* slate gray */
+    box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.2); /* subtle glow */
+    outline: none;
+  }
+  
+  .payment-form button {
+    background-color: #28a745;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-form button:hover {
+    background-color: #218838;
+  }
+  .readonly-field {
+    padding: 0.75rem 1rem;
+    background-color: #E9ECEF; /* Anti-flash white */
+    color: #495057; /* Outer space */
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid #CED4DA;
+    text-align: center;
+  }
+  

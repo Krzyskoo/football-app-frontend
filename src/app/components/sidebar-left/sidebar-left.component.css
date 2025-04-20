@@ -1,0 +1,106 @@
+.sidebar-left {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card-style box for each section */
+.sidebar-box {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.sidebar-box:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #343a40;
+  border-left: 4px solid #6c757d;
+  padding-left: 0.5rem;
+}
+
+.section-list,
+.accordion-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-list li,
+.accordion-content li {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  color: #495057;
+}
+
+.section-list li:hover,
+.accordion-content li:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.active {
+  background-color: #d2ebff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.accordion {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dee2e6;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #212529;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #ced4da;
+}
+
+.arrow {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6c757d;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

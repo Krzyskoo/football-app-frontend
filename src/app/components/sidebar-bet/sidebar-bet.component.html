@@ -1,0 +1,42 @@
+<div class="bet-slip-container">
+  
+  <h3>{{ betSelections.length }} Zdarzeń</h3>
+
+  <!-- Lista zakładów -->
+  <div class="bet-slip-list">
+    <!-- Jeśli brak zakładów -->
+    <div *ngIf="betSelections.length === 0" class="empty-bet-info">
+      <div class="emoji-circle">✌️</div>
+      <h4>Dodaj swój pierwszy zakład!</h4>
+      <p>Nie masz żadnych zakładów. Kliknij kursy,<br> aby dodać zakłady.</p>
+    </div>
+
+    <div *ngFor="let sel of betSelections" class="bet-item">
+      <div class="match">{{ sel.homeTeam }} vs {{ sel.awayTeam }}</div>
+      <div class="team">
+        <ng-container [ngSwitch]="sel.predictedResult">
+          <span *ngSwitchCase="'HOME_WIN'">{{'Typ: ' +  sel.homeTeam }}</span>
+          <span *ngSwitchCase="'AWAY_WIN'">{{'Typ: ' +  sel.awayTeam }}</span>
+          <span *ngSwitchCase="'DRAW'">Typ: Remis</span>
+        </ng-container>
+      </div>
+      <div class="odds">Kurs: {{ sel.lockedOdds }}</div>
+      <button class="remove" (click)="remove(sel.eventId)">❌</button>
+    </div>
+  </div>
+
+  <!-- Podsumowanie -->
+  <div class="bet-slip-summary">
+    <label>Stawka:
+      <input type="number" [(ngModel)]="stake" min="1" />
+    </label>
+    <p><strong>Kurs łączny:</strong> {{ totalOdds | number:'1.2-2' }}</p>
+    <p><strong>Wygrana:</strong> {{ potentialWin | currency:'USD ' }}</p>
+
+    <button class="place-bet" 
+            [disabled]="stake <= 0 || betSelections.length === 0" 
+            (click)="placeBet()">Obstaw</button>
+  </div>
+</div>
+
+

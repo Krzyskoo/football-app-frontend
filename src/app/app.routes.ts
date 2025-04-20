@@ -6,6 +6,7 @@ import { PaymentSuccessComponent } from './components/payment-success/payment-su
 import { PaymentCancelComponent } from './components/payment-cancel/payment-cancel.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EventComponent } from './components/event/event.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
@@ -16,5 +17,7 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path:'event', component: EventComponent},
     { path: 'deposit', component: PaymentComponent },
+    {path: 'register', component: RegisterComponent},
+    {path:'login', component: LoginComponent},
 
   ];

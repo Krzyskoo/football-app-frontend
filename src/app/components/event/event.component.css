@@ -1,0 +1,64 @@
+.scrollable-events {
+  height: 100%;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Karta wydarzenia */
+.event-card {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #DEE2E6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.event-card h4 {
+  margin-bottom: 0.5rem;
+  color: #212529;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.event-card p {
+  color: #6C757D;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Styl dla grupy przycisków */
+.bet-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bet-button {
+  background-color: #495057;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+  min-width: 110px;
+}
+
+.bet-button:hover {
+  background-color: #495057;
+}

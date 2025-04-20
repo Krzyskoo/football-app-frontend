@@ -21,13 +21,8 @@ export class LoginComponent {
   login() {
     this.authService.login(this.username, this.password).subscribe({
       next: (res) => {
-        console.log('✅ Login status:', res.status);
-        console.log('🔐 JWT:', res.jwtToken);
-    
-        if (res.status === 'OK') {
-          localStorage.setItem('jwtToken', res.jwtToken);
-          // Można przekierować usera dalej, np:
-          // this.router.navigate(['/dashboard']);
+        if (res.status === 'OK') {          
+           this.router.navigate(['/event']);
         } else {
           this.error = 'Logowanie nie powiodło się.';
         }
@@ -37,4 +32,5 @@ export class LoginComponent {
       }
     });
   }
+  
 }

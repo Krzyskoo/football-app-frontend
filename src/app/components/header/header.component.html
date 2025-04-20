@@ -1,0 +1,24 @@
+<header class="main-header">
+    <div class="logo">
+      <img src="Dog_bet.png" class="logoImage" alt="logo" />
+    </div>
+  
+    <nav class="nav">
+      <a routerLink="/dashboard" routerLinkActive="active">Strona główna</a>
+      <a routerLink="/event" routerLinkActive="active">Wydarzenia</a>
+      <a routerLink="/bet" routerLinkActive="active">Zakłady</a>
+      <a routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
+    </nav>
+  
+    <div class="auth-links">
+      <ng-container *ngIf="!(isLoggedIn$ | async); else loggedIn">
+        <a routerLink="/login" routerLinkActive="active">Zaloguj się</a>
+        <a routerLink="/register" routerLinkActive="active">Zarejestruj się</a>
+      </ng-container>
+      <ng-template #loggedIn>
+        <a (click)="logout()">Wyloguj się</a>
+      </ng-template>
+    </div>
+    
+  </header>
+  

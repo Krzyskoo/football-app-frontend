@@ -1,6 +1,20 @@
-<div class="login-form">
-  <input [(ngModel)]="username" placeholder="Username" type="username" />
-  <input [(ngModel)]="password" placeholder="Hasło" type="password" />
-  <button (click)="login()">Zaloguj się</button>
-  <div class="error" *ngIf="error">{{ error }}</div>
+<div class="login-wrapper">
+  <form class="login-box" (ngSubmit)="login()">
+    <h2>Witamy z powrotem</h2>
+    <p>Zaloguj się do swojego konta</p>
+
+    <div class="input-group">
+      <input [(ngModel)]="username" name="username" type="text" required placeholder="Nazwa użytkownika" />
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="password" name="password" type="password" required placeholder="Hasło" />
+    </div>
+
+    <button type="submit" class="login-btn">Zaloguj się</button>
+
+    <div class="error-message" *ngIf="error">{{ error }}</div>
+  </form>
 </div>
+
+

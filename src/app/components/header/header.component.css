@@ -1,0 +1,41 @@
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    height: 60px; /* zmniejszona wysokość */
+  }
+  
+  .logo img {
+    width: 40px;
+    height: auto;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav a,
+  .auth-links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px; /* mniejsza czcionka */
+    color: #495057;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover,
+  .auth-links a:hover {
+    color: #212529;
+  }
+  

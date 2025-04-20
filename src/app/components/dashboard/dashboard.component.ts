@@ -36,6 +36,8 @@ export class DashboardComponent implements OnInit {
   goToEvents(): void{
     this.router.navigate(['/event'])
   }
+  
+  
 
 
 }

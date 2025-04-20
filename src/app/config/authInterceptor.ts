@@ -10,7 +10,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   const token = localStorage.getItem('jwtToken');
-  console.log('Interceptor token:', token);
+  
 
   if (token) {
     const cloned = req.clone({

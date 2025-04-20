@@ -1,0 +1,160 @@
+.bet-slip-container {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #212529;
+  max-height: 100%;
+}
+
+.bet-slip-container h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid #6c757d;
+  padding-left: 0.5rem;
+  color: #343a40;
+}
+
+.bet-slip-list {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  max-height: 300px;
+  scrollbar-width: thin;
+}
+
+.bet-item {
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+.bet-item:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.bet-item .match {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #212529;
+}
+
+.bet-item .team {
+  font-size: 0.9rem;
+  color: #495057;
+  margin-bottom: 0.25rem;
+}
+
+.bet-item .odds {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.bet-item .remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.bet-item .remove:hover {
+  color: #a71d2a;
+}
+
+.bet-slip-summary {
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.bet-slip-summary label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.bet-slip-summary input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.bet-slip-summary p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #343a40;
+}
+
+.place-bet {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.place-bet:hover {
+  background-color: #218838;
+}
+
+.place-bet:disabled {
+  background-color: #c3e6cb;
+  cursor: not-allowed;
+}
+.empty-bet-info {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  background-color: #F8F9FA;
+  color: #212529;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.empty-bet-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-bet-info p {
+  font-size: 0.95rem;
+  color: #6C757D;
+  line-height: 1.4;
+}
+
+.emoji-circle {
+  background-color: #E9ECEF;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  font-size: 32px;
+  margin: 0 auto;
+}
+

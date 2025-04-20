@@ -1,26 +1,20 @@
-<div class="mb-4">
-  <label>
-    Filtruj po dacie:
-    <input type="date" [(ngModel)]="filterDate" name="filterDate" />
-  </label>
-  <label>
-    Filtruj po lidze:
-    <input type="text" [(ngModel)]="filterLeague" name="filterLeague" placeholder="np. Premier League" />
-  </label>
-</div>
+<section class="main-content">
+  <div class="scrollable-events">
+    <div *ngFor="let event of filtered" class="event-card">
+      <h4>{{ event.homeTeam }} vs {{ event.awayTeam }}</h4>
+      <p>Start: {{ event.startTime | date:'short' }}</p>
 
-<ul>
-    <li *ngFor="let event of filteredEvents()">
-      <strong>{{ event.homeTeam }} vs {{ event.awayTeam }}</strong><br />
-      Rozpoczęcie: {{ event.startTime | date:'short' }}<br />
-      Status: {{ event.status }}<br />
-  
-      <button>Obstaw ({{ event.homeTeamOdds }})</button>
-      <button>Remis ({{ event.drawOdds }})</button>
-      <button>Obstaw ({{ event.awayTeamOdds }})</button>
-      <hr />
-    </li>
-</ul>
-  
-
-<p *ngIf="events.length === 0">Brak dostępnych wydarzeń.</p>
+      <div class="bet-button-group">
+        <button class="bet-button" (click)="addToBet(event, 'HOME_WIN')">
+          {{ event.homeTeam }} ({{ event.homeTeamOdds }})
+        </button>
+        <button class="bet-button" (click)="addToBet(event, 'DRAW')">
+          Remis ({{ event.drawOdds }})
+        </button>
+        <button class="bet-button" (click)="addToBet(event, 'AWAY_WIN')">
+          {{ event.awayTeam }} ({{ event.awayTeamOdds }})
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
