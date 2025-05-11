@@ -1,19 +1,19 @@
 .payment-container {
-    background-color: #F8F9FA; /* seasalt */
+    background-color: #F8F9FA; 
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(33, 37, 41, 0.08); /* soft shadow using #212529 */
+    box-shadow: 0 4px 16px rgba(33, 37, 41, 0.08); 
     max-width: 420px;
     margin: 3rem auto;
     font-family: 'Segoe UI', sans-serif;
-    color: #343A40; /* onyx */
+    color: #343A40; 
   }
   
   .title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: #212529; /* eerie black */
+    color: #212529; 
     text-align: center;
   }
   
@@ -25,21 +25,21 @@
   
   .payment-form input {
     padding: 0.75rem 1rem;
-    border: 1px solid #CED4DA; /* french gray */
+    border: 1px solid #CED4DA; 
     border-radius: 10px;
     font-size: 1rem;
     background-color: #FFFFFF;
-    color: #495057; /* outer space */
+    color: #495057; 
     transition: border 0.3s ease, box-shadow 0.3s ease;
   }
   
   .payment-form input::placeholder {
-    color: #ADB5BD; /* light gray text */
+    color: #ADB5BD; 
   }
   
   .payment-form input:focus {
-    border-color: #6C757D; /* slate gray */
-    box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.2); /* subtle glow */
+    border-color: #6C757D; 
+    box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.2); 
     outline: none;
   }
   
@@ -60,8 +60,8 @@
   }
   .readonly-field {
     padding: 0.75rem 1rem;
-    background-color: #E9ECEF; /* Anti-flash white */
-    color: #495057; /* Outer space */
+    background-color: #E9ECEF; 
+    color: #495057; 
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 500;

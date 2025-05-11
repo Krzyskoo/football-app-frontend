@@ -17,7 +17,6 @@ export class RegisterComponent {
   success = '';
 
   constructor(private authService: AuthService, private router: Router) { }
-   // Inject AuthService if needed
 
    register(){
     this.authService.register(this.email, this.password).subscribe({

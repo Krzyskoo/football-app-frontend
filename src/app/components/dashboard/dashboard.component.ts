@@ -39,11 +39,9 @@ export class DashboardComponent implements OnInit {
   }
   toggleDetails(betId: number) {
     if (this.expandedBetId === betId) {
-      // Zwijanie
       this.expandedBetId = null;
       this.selectedBet = null;
     } else {
-      // Rozwijanie
       this.expandedBetId = betId;
       this.selectedBet = this.bets.find(bet => bet.betId === betId) || null;
     }

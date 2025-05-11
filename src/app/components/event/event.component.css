@@ -8,7 +8,6 @@
   gap: 1.5rem;
 }
 
-/* Karta wydarzenia */
 .event-card {
   background: #ffffff;
   padding: 1.5rem 2rem;
@@ -39,7 +38,6 @@
   margin-bottom: 1rem;
 }
 
-/* Styl dla grupy przycisków */
 .bet-button-group {
   display: flex;
   justify-content: center;

@@ -2,9 +2,7 @@
   
   <h3>{{ getEventLabel() }}</h3>
 
-  <!-- Lista zakładów -->
   <div class="bet-slip-list">
-    <!-- Jeśli brak zakładów -->
     <div *ngIf="betSelections.length === 0" class="empty-bet-info">
       <div class="emoji-circle">✌️</div>
       <h4>Dodaj swój pierwszy zakład!</h4>
@@ -25,7 +23,6 @@
     </div>
   </div>
 
-  <!-- Podsumowanie -->
   <div class="bet-slip-summary">
     <label>Stawka:
       <input type="number" [(ngModel)]="stake" min="1" />

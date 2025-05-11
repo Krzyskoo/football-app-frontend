@@ -5,7 +5,7 @@
     padding: 8px 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
-    height: 60px; /* zmniejszona wysokość */
+    height: 60px; 
   }
   
   .logo img {
@@ -29,7 +29,7 @@
   .auth-links a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px; /* mniejsza czcionka */
+    font-size: 14px; 
     color: #495057;
     transition: color 0.3s;
   }

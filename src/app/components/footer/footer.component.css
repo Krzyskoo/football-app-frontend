@@ -1,9 +1,9 @@
 .app-footer {
-    background-color: #343a40; /* Onyx */
-    color: #dee2e6;             /* Platinum */
+    background-color: #343a40; 
+    color: #dee2e6;             
     padding: 1.5rem 2rem;
     font-size: 0.9rem;
-    border-top: 1px solid #495057; /* Outer space */
+    border-top: 1px solid #495057; 
   }
   
   .footer-content {
@@ -22,14 +22,14 @@
   }
   
   .footer-center a {
-    color: #ced4da; /* French gray */
+    color: #ced4da; 
     text-decoration: none;
     margin: 0 0.75rem;
     transition: color 0.2s ease;
   }
   
   .footer-center a:hover {
-    color: #adb5bd; /* Lighter gray on hover */
+    color: #adb5bd; 
   }
   
   @media (max-width: 768px) {
