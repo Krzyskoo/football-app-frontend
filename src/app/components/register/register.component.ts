@@ -11,26 +11,26 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  username = '';
+  email = '';
   password = '';
   error = '';
+  success = '';
 
   constructor(private authService: AuthService, private router: Router) { }
    // Inject AuthService if needed
 
    register(){
-    this.authService.register(this.username, this.password).subscribe({
+    this.authService.register(this.email, this.password).subscribe({
       next: (res) => {
-        console.log('✅ Register status:', res);
-        if (res === 'User registered successfully') {
-          // Można przekierować usera dalej, np:
-           this.router.navigate(['/event']);
-        } else {
-          this.error = 'Rejestracja nie powiodła się.';
-        }
+        console.log('✅ Odpowiedź z backendu:', res);
+        this.success = 'Konto utworzone!';
+        this.error = '';
+        setTimeout(() => this.router.navigate(['/login']), 1500);
       },
-      error: () => {
-        this.error = 'Błąd połączenia lub niepoprawne dane.';
+      error: (err) => {
+        console.error('❌ Błąd rejestracji:', err);
+        this.error = 'Rejestracja nie powiodła się.';
+        this.success = '';
       }
     });
    }

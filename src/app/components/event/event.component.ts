@@ -32,7 +32,7 @@ export class EventComponent implements OnInit {
     this.eventService.getEvents().subscribe({
       next: (data) => {
         this.events = data;
-        this.filtered = data; // pełna kopia dla filtrowania
+        this.filtered = data; 
       },
       error: (err) => console.error('Błąd przy pobieraniu eventów', err),
     });
@@ -41,7 +41,7 @@ export class EventComponent implements OnInit {
       if (sportKey) {
         this.filtered = this.events.filter(e => e.sportKey === sportKey);
       } else {
-        this.filtered = this.events; // jeśli brak filtra, pokazuj wszystkie
+        this.filtered = this.events; 
       }
     });
   }

@@ -4,20 +4,45 @@
 
 <main class="layout-grid">
   <aside class="left-sidebar">
-    <app-sidebar-left></app-sidebar-left>
+    <app-sidebar-left *ngIf="isLoggedIn"></app-sidebar-left>
+
   </aside>
 
   <section class="main-section">
     <router-outlet></router-outlet>
+    <footer class="event-footer">
+      <div class="sponsors">
+        <img src="assets/sponsor1.png" alt="Sponsor Tytularny" />
+        <img src="assets/sponsor2.png" alt="Sponsor Tytularny" />
+        <img src="assets/sponsor3.png" alt="Sponsor Tytularny" />
+        <img src="assets/sponsor4.png" alt="Sponsor Tytularny" />
+      </div>
+  
+      <div class="legal">
+        <img src="assets/18plus.png" alt="18+" />
+        <p>Zakaz uczestnictwa w grze hazardowej dla osób poniżej 18 roku życia.</p>
+      </div>
+  
+      <p class="legal-text">
+        Dog bets sp.z.o.o posiada zezwolenie na urządzanie zakładów...<br>
+        Udział w nielegalnych grach hazardowych jest niezgodny z prawem.
+      </p>
+  
+      <div class="links">
+        <a href="#">Odpowiedzialna gra</a> •
+        <a href="#">Regulamin Ogólny</a> •
+        <a href="#">Polityka prywatności</a> •
+        <a href="#">Pliki cookie</a>
+      </div>
+  
+      <p class="footer-branding">© Krzysztof Kandyba 2025 FootballApp • v1.0.0</p>
+    </footer>
   </section>
 
   <aside class="right-sidebar">
-    <app-sidebar-bet></app-sidebar-bet>
+    <app-sidebar-bet *ngIf="isLoggedIn"></app-sidebar-bet>
   </aside>
 </main>
 
-<footer class="app-footer">
-  <p>&copy; 2025 FootballApp - Wszelkie prawa zastrzeżone</p>
-</footer>
 
   

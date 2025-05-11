@@ -6,7 +6,7 @@ import { LoginResponse } from '../models/login-response';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private authUrl = 'http://localhost:8080/login'; // zmień jak potrzeba
+  private authUrl = 'http://localhost:8080/login'; 
   loggedIn = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.loggedIn.asObservable();
 
@@ -19,15 +19,15 @@ export class AuthService {
     return this.http.post<LoginResponse>(this.authUrl, { username, password }).pipe(
       tap((res: LoginResponse) => {
         localStorage.setItem('jwtToken', res.jwtToken);
-        this.loggedIn.next(true); // oznacz jako zalogowany
+        this.loggedIn.next(true); 
       })
     );
   }
   register(email:string, password:string):Observable<string>{
-    return this.http.post<string>('http://localhost:8080/register',{
+    return this.http.post('http://localhost:8080/register', {
       email,
       password
-    })
+    }, { responseType: 'text' });
   }
 
   getToken() {
@@ -40,6 +40,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('jwtToken');
-    this.loggedIn.next(false); // Ustawienie statusu zalogowania
+    this.loggedIn.next(false); 
   }
 }

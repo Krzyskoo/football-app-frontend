@@ -1,18 +1,19 @@
 <div class="login-wrapper">
-    <form class="login-box" (ngSubmit)="register()">
-      <h2>Witamy</h2>
-      <p>Zaloguj się do swojego konta</p>
-  
-      <div class="input-group">
-        <input [(ngModel)]="username" name="email" type="text" required placeholder="email użytkownika" />
-      </div>
-  
-      <div class="input-group">
-        <input [(ngModel)]="password" name="password" type="password" required placeholder="Hasło" />
-      </div>
-  
-      <button type="submit" class="login-btn">Zarejestruj</button>
-  
-      <div class="error-message" *ngIf="error">{{ error }}</div>
-    </form>
-  </div>
+  <form class="login-box" (ngSubmit)="register()">
+    <h2>Utwórz konto</h2>
+    <p>Wprowadź swój email i hasło, aby się zarejestrować</p>
+
+    <div class="input-group">
+      <input [(ngModel)]="email" name="email" type="email" required placeholder="Email" />
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="password" name="password" type="password" required placeholder="Hasło" />
+    </div>
+
+    <button type="submit" class="login-btn">Zarejestruj się</button>
+
+    <div class="error-message" *ngIf="error">{{ error }}</div>
+    <div class="success-message" *ngIf="success">{{ success }}</div>
+  </form>
+</div>

@@ -39,3 +39,82 @@ html, body {
   padding: 1rem;
   border-left: 1px solid #ddd;
 }
+.event-footer {
+  padding: 2rem 1rem;
+  background-color: #f8f9fa; /* Jasny tło: Seasalt */
+  color: #212529; /* Ciemna czcionka */
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.sponsors img {
+  margin: 0 0.5rem;
+  height: 40px;
+}
+
+.fame-section {
+  margin-top: 2rem;
+}
+
+.fame-section img {
+  height: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.help-button {
+  background-color: #212529;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: #343a40;
+}
+
+.legal {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.legal img {
+  height: 40px;
+}
+
+.legal-text {
+  margin-top: 1rem;
+  color: #6c757d;
+  font-size: 0.75rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.links {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.links a {
+  color: #495057;
+  text-decoration: none;
+  margin: 0 0.25rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.footer-branding {
+  margin-top: 1rem;
+  color: #adb5bd;
+  font-size: 0.8rem;
+}

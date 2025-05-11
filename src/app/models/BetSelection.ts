@@ -14,7 +14,7 @@ id: number;
   };
 lockedOdds: number;
 predictedResult: 'HOME_WIN' | 'AWAY_WIN' | 'DRAW';
-isWon: boolean;
+won: boolean;
 completed: boolean;
 
 

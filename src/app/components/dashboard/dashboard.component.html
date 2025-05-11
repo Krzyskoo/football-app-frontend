@@ -5,44 +5,50 @@
       <p>Saldo: <strong>{{ user?.balance }} USD</strong></p>
     </div>
     <div class="user-actions">
-      <button (click)="goToDeposit()">
-        💰 Wpłać środki
-      </button>
-      <button (click)="goToEvents()">
-        🏆 Postaw zakład
-      </button>
+      <button (click)="goToDeposit()">💰 Wpłać środki</button>
+      <button (click)="goToEvents()">🏆 Postaw zakład</button>
     </div>
   </div>
 
   <div class="bets-card">
-    <h3>🎯 Aktywne zakłady</h3>
+    <h3>🎯 Twoje zakłady</h3>
     <ul class="bets-list">
-      <li *ngFor="let bet of bets" (click)="selectBet(bet)">
-        <div class="bet-box">
+      <li *ngFor="let bet of bets">
+        <div class="bet-box" (click)="toggleDetails(bet.betId)">
           <span>Zakład #{{ bet.betId }}</span>
+          <span class="date">{{ bet.createdDt | date: 'short' }}</span>
           <span class="status">{{ bet.status }}</span>
           <span>Stawka: {{ bet.stake }} USD</span>
         </div>
-      </li>
-    </ul>
-  </div>
 
-  <div *ngIf="selectedBet" class="details-card">
-    <h4>📋 Szczegóły zakładu #{{ selectedBet?.betId }}</h4>
-    <ul class="selection-list">
-      <li *ngFor="let sel of selectedBet.selections">
-        <div class="selection-line">
-          <span>
-            {{ sel.event.homeTeam }} vs {{ sel.event.awayTeam }}
-          </span>
-          <span>Typ:
-            <ng-container [ngSwitch]="sel.predictedResult">
-              <strong *ngSwitchCase="'HOME_WIN'">{{ sel.event.homeTeam }}</strong>
-              <strong *ngSwitchCase="'AWAY_WIN'">{{ sel.event.awayTeam }}</strong>
-              <strong *ngSwitchCase="'DRAW'">Remis</strong>
-            </ng-container>
-          </span>
-          <span>Kurs: {{ sel.lockedOdds }}</span>
+        <div *ngIf="expandedBetId === bet.betId" class="details-card">
+          <h4>📋 Szczegóły zakładu #{{ bet.betId }}</h4>
+          <ul class="selection-list">
+            <li *ngFor="let sel of bet.selections">
+              <div class="selection-line match-header">
+                <span class="status-icon">
+                  <ng-container *ngIf="sel.completed">
+                     <ng-container *ngIf="sel.won; else lost">✅</ng-container>
+                    <ng-template #lost>❌</ng-template>
+                  </ng-container>
+                  <ng-container *ngIf="!sel.completed">⏳</ng-container>
+                </span>
+                <span class="match-title">{{ sel.event.homeTeam }} vs {{ sel.event.awayTeam }}</span>
+              
+                <span>Typ:
+                  <ng-container [ngSwitch]="sel.predictedResult">
+                    <strong *ngSwitchCase="'HOME_WIN'">{{ sel.event.homeTeam }}</strong>
+                    <strong *ngSwitchCase="'AWAY_WIN'">{{ sel.event.awayTeam }}</strong>
+                    <strong *ngSwitchCase="'DRAW'">Remis</strong>
+                  </ng-container>
+                </span>
+              
+                <span>Kurs: {{ sel.lockedOdds }}</span>
+              </div>
+              
+            </li>
+            
+          </ul>
         </div>
       </li>
     </ul>

@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   user: User | null=null;
   bets: Bet[] = [];
   selectedBet: Bet | null = null;
+  expandedBetId: number | null = null;
 
   constructor(private userService: UserService, private betService: BetService, private router: Router) {}
 
@@ -35,6 +36,17 @@ export class DashboardComponent implements OnInit {
   }
   goToEvents(): void{
     this.router.navigate(['/event'])
+  }
+  toggleDetails(betId: number) {
+    if (this.expandedBetId === betId) {
+      // Zwijanie
+      this.expandedBetId = null;
+      this.selectedBet = null;
+    } else {
+      // Rozwijanie
+      this.expandedBetId = betId;
+      this.selectedBet = this.bets.find(bet => bet.betId === betId) || null;
+    }
   }
   
   

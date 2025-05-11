@@ -54,14 +54,23 @@ export class SidebarBetComponent implements OnInit {
   
     this.betService.placeBet(betRequest).subscribe({
       next: (response) => {
-        console.log('Zakład postawiony:', response);
+        window.alert('✅ Twój zakład został pomyślnie postawiony!');
         this.betSelectionService.clearSelections(); // Wyczyść kupon
         this.stake = 0;
       },
       error: (error) => {
-        console.error('Błąd przy składaniu zakładu:', error);
+        window.alert('❌ Wystąpił błąd przy stawianiu zakładu.');
       }
     });
   }
+  getEventLabel(): string {
+    const count = this.betSelections.length;
+  
+    if (count === 0) return 'Brak zdarzeń';
+    if (count === 1) return '1 zdarzenie';
+    if (count >= 2 && count <= 4) return `${count} zdarzenia`;
+    return `${count} zdarzeń`;
+  }
+  
   
 }

@@ -7,4 +7,5 @@ export interface Bet {
   status: string;
   winAmount: number;
   selections: BetSelection[];
+  createdDt: string;
 }

@@ -5,7 +5,7 @@ import { AuthService } from "../services/auth.service";
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // ❌ NIE dodawaj headera dla /login
-  if (req.url.endsWith('/login')) {
+  if (req.url.endsWith('/login') || req.url.endsWith('/contact')) {
     return next(req);
   }
 

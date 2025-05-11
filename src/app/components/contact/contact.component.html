@@ -1,0 +1,16 @@
+<div class="contact-wrapper">
+    <form class="contact-form" (ngSubmit)="sendMessage()">
+      <h2>Skontaktuj się z nami</h2>
+  
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Imię i nazwisko" required />
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Twój email" required />
+      <input type="subject" [(ngModel)]="subject" name="email" placeholder="Temat" required />
+      <textarea [(ngModel)]="message" name="message" rows="5" placeholder="Wiadomość..." required></textarea>
+  
+      <button type="submit">Wyślij</button>
+  
+      <div class="success" *ngIf="success">{{ success }}</div>
+      <div class="error" *ngIf="error">{{ error }}</div>
+    </form>
+  </div>
+  
